@@ -23,6 +23,9 @@ app.controller("mycontroller", function ($scope, uiGmapGoogleMapApi) {
     angular.extend($scope, {
         init: function () {
             uiGmapGoogleMapApi.then($scope.mapsReady);
+            document.addEventListener('deviceready', $scope.deviceReady, false);
+        },
+        deviceReady: function(){
         },
         mapsReady: function (maps) {
         },
