@@ -35,7 +35,7 @@ app.controller("mycontroller", function ($scope, uiGmapGoogleMapApi) {
         },
         mapsReady: function (maps) {
         },
-        map: { center: { latitude: 45, longitude: -73 }, zoom: 8 },
+        map: { center: { latitude: 45, longitude: -73 }, zoom: 12 },
         positionReady: function(position){
             $scope.map.center.latitude = position.coords.latitude;
             $scope.map.center.longitude = position.coords.longitude;
