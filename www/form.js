@@ -24,12 +24,23 @@ app.controller("mycontroller", function ($scope, uiGmapGoogleMapApi) {
         init: function () {
             uiGmapGoogleMapApi.then($scope.mapsReady);
             document.addEventListener('deviceready', $scope.deviceReady, false);
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition($scope.positionReady);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+
         },
         deviceReady: function(){
         },
         mapsReady: function (maps) {
         },
-        map: { center: { latitude: 45, longitude: -73 }, zoom: 8 }
+        map: { center: { latitude: 45, longitude: -73 }, zoom: 8 },
+        positionReady: function(position){
+            $scope.map.center.latitude = position.coords.latitude;
+            $scope.map.center.longitude = position.coords.longitude;
+            $scope.$apply();
+        }
     }).init();
 
 
