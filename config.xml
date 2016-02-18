@@ -11,9 +11,9 @@
         Rich Hildred and Mobile App Class of 2015
     </author>
     <!-- We'll include the Barcode plugin as an example -->
-    <gap:plugin name="de.appplant.cordova.plugin.badge" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.device" />
+    <preference name="phonegap-version" value="3.7.0" />
+    <plugin name="org.apache.cordova.geolocation" />
+    <plugin name="org.apache.cordova.device" />
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
     </feature>
