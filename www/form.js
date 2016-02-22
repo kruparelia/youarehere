@@ -40,6 +40,9 @@ app.controller("mycontroller", function ($scope, uiGmapGoogleMapApi) {
             $scope.map.center.latitude = position.coords.latitude;
             $scope.map.center.longitude = position.coords.longitude;
             $scope.$apply();
+        },
+        refresh: function(){
+            navigator.geolocation.getCurrentPosition($scope.positionReady);
         }
     }).init();
 
